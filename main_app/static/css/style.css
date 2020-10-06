@@ -2,7 +2,17 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image: url(https://external-preview.redd.it/4K7nfCM3tY-u22u0Ghp7VMepwAP8Rff3pFmDyJxhSK8.jpg?auto=webp&s=3991100b9f416288fe2bfe9edfd122e98d963863);
   }
+
+  nav {
+    background-color: rgba(112, 37, 43, .6);
+}
+
+.left brand-logo {
+    color: moccasin;
+
+}
   
   main {
     flex: 1 0 auto;
@@ -11,4 +21,11 @@ body {
   footer.page-footer {
     padding-top: 0;
     text-align: right;
+    color: moccasin;
+    background-color: rgba(112, 37, 43, .6);
+  }
+
+  h1 {
+      text-align: center;
+      color: moccasin;
   }

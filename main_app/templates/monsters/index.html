@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Monster List</h1>
+<h1 id="indti">Monster List</h1>
 
 {% for monster in monsters %}
   <div class="card">
+  <a href="{% url 'detail' monster.id %}">
     <div class="card-content">
       <span class="card-title">{{ monster.name }}</span>
-      <p>Size: {{ monster.size }}</p>
       <p>Element: {{ monster.element }}</p>
-      <p>Ferocity: {{ monster.ferocity }}</p>
     </div>
+    </a>
   </div>
 {% endfor %}
 

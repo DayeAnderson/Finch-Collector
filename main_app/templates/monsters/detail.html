@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{monster.name}} Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ monster.name }}</span>
+    <p>Size: {{ monster.size }}</p>
+    <p>Element: {{ monster.element }}</p>
+    <p>Wyvern Type: {{ monster.wyvern_type }} </p>
+    {% if monster.ferocity < 150 %}
+        <p>Ferocity: {{ monster.ferocity }}</p>
+    {% else %}
+        <p>Ferocity: {{ monster.ferocity }}(Your will to live will be lost here...)</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

@@ -15,3 +15,7 @@ def about(request):
 def monsters_index(request):
     monsters = Monster.objects.all()
     return render(request, 'monsters/index.html', {'monsters': monsters})
+
+def monsters_detail(request, monster_id):
+    monster = Monster.objects.get(id=monster_id)
+    return render(request, 'monsters/detail.html', {'monster': monster})

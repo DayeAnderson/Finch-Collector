@@ -3,9 +3,9 @@ body {
     min-height: 100vh;
     flex-direction: column;
     background-image: url(https://external-preview.redd.it/4K7nfCM3tY-u22u0Ghp7VMepwAP8Rff3pFmDyJxhSK8.jpg?auto=webp&s=3991100b9f416288fe2bfe9edfd122e98d963863);
-  }
+}
 
-  nav {
+nav {
     background-color: rgba(112, 37, 43, .6);
 }
 
@@ -13,19 +13,39 @@ body {
     color: moccasin;
 
 }
-  
-  main {
-    flex: 1 0 auto;
-  }
-  
-  footer.page-footer {
+
+a {
+    font-size: 30px;
+}
+
+.card {
+    text-align: center;
+    background-color: rgba(112, 37, 43, .6);
+
+}
+
+main {
+flex: 1 0 auto;
+}
+
+form {
+color: moccasin;
+}
+
+footer.page-footer {
     padding-top: 0;
     text-align: right;
     color: moccasin;
     background-color: rgba(112, 37, 43, .6);
-  }
+}
 
-  h1 {
-      text-align: center;
-      color: moccasin;
-  }
+h1 {
+    text-align: center;
+    color: moccasin;
+}
+
+#deet {
+    color: moccasin;
+    font-size: 30px;
+
+}

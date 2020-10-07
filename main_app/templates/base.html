@@ -18,8 +18,9 @@
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;MonsterCollector</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="/monsters">View All My Monsters</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'monsters_create' %}">Add a Monster</a></li>
+          <li><a href="{% url 'index' %}">View All My Monsters</a></li>
         </ul>
       </div>
     </nav>
@@ -29,7 +30,7 @@
     {% endblock %}
   </main>
   <footer class="page-footer">
-    <div class="right">All Rights Reserved, &copy; 2019 Monster Collector &nbsp;</div>
+    <div class="right">All Rights Reserved, &copy; 2018 Capcom Monster Hunter World &nbsp;</div>
   </footer>
 </body>
 </html>

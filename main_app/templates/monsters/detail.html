@@ -4,8 +4,7 @@
 <h1>{{monster.name}} Details</h1>
 
 <div class="card">
-  <div class="card-content">
-    <span class="card-title">{{ monster.name }}</span>
+  <div class="card-content" id="deet">
     <p>Size: {{ monster.size }}</p>
     <p>Element: {{ monster.element }}</p>
     <p>Wyvern Type: {{ monster.wyvern_type }} </p>
@@ -15,6 +14,11 @@
         <p>Ferocity: {{ monster.ferocity }}(Your will to live will be lost here...)</p>
     {% endif %}
   </div>
+    <div class="card-action">
+    <a href="{% url 'monsters_update' monster.id %}">Edit</a>
+    <a href="{% url 'monsters_delete' monster.id %}">Delete</a>
+  </div>
+
 </div>
 
 {% endblock %}

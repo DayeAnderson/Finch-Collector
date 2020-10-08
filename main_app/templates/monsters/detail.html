@@ -3,22 +3,88 @@
 
 <h1>{{monster.name}} Details</h1>
 
-<div class="card">
-  <div class="card-content" id="deet">
-    <p>Size: {{ monster.size }}</p>
-    <p>Element: {{ monster.element }}</p>
-    <p>Wyvern Type: {{ monster.wyvern_type }} </p>
-    {% if monster.ferocity < 150 %}
-        <p>Ferocity: {{ monster.ferocity }}</p>
+<div class="row">
+  <div class="col s6">
+    <div class="card">
+        <div class="card-content" id="deet">
+            <p>Size: {{ monster.size }}</p>
+            <p>Element: {{ monster.element }}</p>
+            <p>Wyvern Type: {{ monster.wyvern_type }} </p>
+            {% if monster.ferocity < 150 %}
+                <p>Ferocity: {{ monster.ferocity }}</p>
+            {% else %}
+                <p>Ferocity: {{ monster.ferocity }}(Your will to live will be lost here...)</p>
+            {% endif %}
+        </div>
+            <div class="card-action">
+                <a href="{% url 'monsters_update' monster.id %}">Edit</a>
+                <a href="{% url 'monsters_delete' monster.id %}">Delete</a>
+            </div>
+    </div>
+</div>
+<div class="col s6">
+  <form action="{% url 'add_attacks' monster.id %}" method="post">
+        {% csrf_token %}
+        {{ attack_form.as_p }}
+        <input type="submit" class="btn" value="Add Attack">
+    </form>
+    <table class="striped">
+      <thead>
+        <tr><th>Attack</th><th>Element</th></tr>
+      </thead>
+      <tbody>
+        {% for attacks in monster.attacks_set.all %}
+          <tr>
+            <td>{{attacks.attack}}</td>
+            <td>{{attacks.get_element_display}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <hr>
+<div class="row">
+  <div class="col s6">
+    <h3>{{ monster.name }}'s Weaknesses</h3>
+    {% if monster.weaknesses.count %}
+      {% for weakness in monster.weaknesses.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              A <span style="color: {{ weakness.color }}">{{ weakness.color }}</span> {{ weakness.name }}
+            </span>
+          </div>
+        </div>
+      {% endfor %}
     {% else %}
-        <p>Ferocity: {{ monster.ferocity }}(Your will to live will be lost here...)</p>
+      <h5>No Weaknesses :(</h5>
     {% endif %}
   </div>
-    <div class="card-action">
-    <a href="{% url 'monsters_update' monster.id %}">Edit</a>
-    <a href="{% url 'monsters_delete' monster.id %}">Delete</a>
-  </div>
-
+    <div class="col s6">
+    <h3>Weaknesses</h3>
+    {% if weaknesses.count %}
+      {% for weakness in weaknesses.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+            <span style="color: {{ weakness.color }}">{{ weakness.name }}</span>
+            </span>
+          </div>
+          <div class="card-action">
+            <form action="" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn">Add</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>{{monster.name}} Is weak to EVERYTHING</h5>
+    {% endif %}
 </div>
 
+<script>
+    var selectEl = document.getElementById('id_element');
+    M.FormSelect.init(selectEl);
+</script>
 {% endblock %}

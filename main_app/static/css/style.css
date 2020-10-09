@@ -2,7 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-image: url(https://external-preview.redd.it/4K7nfCM3tY-u22u0Ghp7VMepwAP8Rff3pFmDyJxhSK8.jpg?auto=webp&s=3991100b9f416288fe2bfe9edfd122e98d963863);
+    background-image: url(https://i.imgur.com/xkG80UX.jpg);
 }
 
 nav {
@@ -20,7 +20,7 @@ a {
 
 .card {
     text-align: center;
-    background-color: rgba(112, 37, 43, .6);
+    background-color: rgba(112, 37, 43, .8);
 
 }
 

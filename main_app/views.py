@@ -46,7 +46,7 @@ class MonsterCreate(CreateView):
 
 class MonsterUpdate(UpdateView):
   model = Monster
-  fields = '__all__'
+  fields = ['name', 'size', 'wyvern_type', 'ferocity']
 
 class MonsterDelete(DeleteView):
   model = Monster

@@ -5,6 +5,7 @@ ELEMENTS = (
     ('NON', 'None'),
     ('FIR', 'Fire'),
     ('WAT', 'Water'),
+    ('ICE', 'Ice'),
     ('THN', 'Thunder'),
     ('DRG', 'Dragon'),
     ('BLS', 'Blast'),
@@ -28,7 +29,7 @@ class Weakness(models.Model):
 class Monster(models.Model):
     name = models.CharField(max_length=100)
     size = models.CharField(max_length=100)
-    element = models.CharField(max_length=100)
+    element = models.CharField(max_length=150)
     wyvern_type = models.CharField(max_length=100)
     ferocity = models.IntegerField()
     weaknesses = models.ManyToManyField(Weakness)

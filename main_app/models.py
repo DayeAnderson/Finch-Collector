@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 ELEMENTS = (
     ('NON', 'None'),
@@ -33,6 +34,8 @@ class Monster(models.Model):
     wyvern_type = models.CharField(max_length=100)
     ferocity = models.IntegerField()
     weaknesses = models.ManyToManyField(Weakness)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.name

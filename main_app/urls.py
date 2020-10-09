@@ -16,6 +16,6 @@ urlpatterns = [
     path('weaknesses/<int:pk>/update/', views.WeaknessUpdate.as_view(), name='weaknesses_update'),
     path('weaknesses/<int:pk>/delete/', views.WeaknessDelete.as_view(), name='weaknesses_delete'),
     path('monsters/<int:monster_id>/assoc_weakness/<int:weakness_id>/', views.assoc_weakness, name='assoc_weakness'),
-
+    path('accounts/signup/', views.signup, name='signup'),
 
 ]
